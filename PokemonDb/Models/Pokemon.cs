@@ -1,11 +1,9 @@
-//in MYSQL Workbench, create items table add ChildClassId and other fields into columns
-
 using System.Collections.Generic;
 using MySql.Data.MySqlClient;
 
-namespace ProjectName.Models //TODO
+namespace PokemonDb.Models
 {
-    public class ChildClass
+    public class Pokemon
     {
         //fields { get; set; }
         //public int ParentClassId {get; set; }
