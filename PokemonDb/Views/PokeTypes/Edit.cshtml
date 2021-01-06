@@ -1,0 +1,22 @@
+@{
+    Layout = "_Layout";
+}
+
+@model PokemonDb.Models.PokeType;
+
+<h2>Edit Pokemon Type:</h2>
+
+<h4>Edit @Html.DisplayFor(model => model.PokeTypeName)</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.PokeTypeId)
+
+    @Html.LabelFor(model => model.PokeTypeName)
+    @Html.EditorFor(model => model.PokeTypeName)
+
+    <input type="submit" value="Save" />
+}
+
+<p>@Html.ActionLink("Back to Pokemon Types", "Index")</p>
+<p>@Html.ActionLink("Home", "Index", "Home")</p>

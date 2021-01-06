@@ -72,6 +72,5 @@ namespace PokemonDb.Controllers
             return RedirectToAction("Index");
 
         }
-
     }
 }

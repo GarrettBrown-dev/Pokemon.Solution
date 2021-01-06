@@ -1,0 +1,21 @@
+@{
+    Layout = "_Layout";
+}
+
+@using PokemonDb.Models;
+@model List<PokemonDb.Models.PokeType>;
+
+<h1>Pokemon Types</h1>
+
+@if (@Model.Count == 0)
+{
+    <h3>No Pokemon types have been added to your pokedex!</h3>
+}
+
+@foreach (PokeType pokeType in Model)
+{
+    <li>@Html.ActionLink($"{pokeType.PokeTypeName}", "Details", new { id = pokeType.PokeTypeId })</li>
+}
+
+<p>@Html.ActionLink("Add new type", "Create")</p>
+<p>@Html.ActionLink("Home", "Index", "Home")</p>

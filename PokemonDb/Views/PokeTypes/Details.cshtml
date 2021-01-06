@@ -1,0 +1,29 @@
+@{
+    Layout = "_Layout";
+}
+
+@model PokemonDb.Models.PokeType;
+
+<h2>Pokemon Type Details:</h2>
+<hr />
+<h3>Pokemon Type: @Html.DisplayFor(model => model.PokeTypeName)</h3>
+
+@if (Model.Pokemons.Count == 0)
+{
+    <p>This Pokemon type does not contain any Pokemon.</p>
+}
+else
+{
+    <h4>Pokemon of this Type:</h4>
+    <ul>
+    @foreach (var join in Model.Pokemons)
+        {
+            <li>@join.Pokemon.PokemonName</li>
+        }
+    </ul>
+}
+
+<p>@Html.ActionLink("Back to Pokemon Type list", "Index")</p>
+<p>@Html.ActionLink("Edit Pokemon Type", "Edit", new { id = Model.PokeTypeId})</p>
+<p>@Html.ActionLink("Delete Pokemon Type", "Delete", new { id = Model.PokeTypeId})</p>
+<p>@Html.ActionLink("Home", "Index", "Home")</p>

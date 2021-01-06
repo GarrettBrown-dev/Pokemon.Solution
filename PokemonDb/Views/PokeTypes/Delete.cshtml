@@ -1,0 +1,15 @@
+@{
+    Layout = "_Layout";
+}
+
+@model PokemonDb.Models.PokeType;
+
+<h3>Are you sure you want to remove this type?</h3>
+
+<p>Pokemon Type: @Html.DisplayFor(model => model.PokeTypeName)</p>
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Delete" />
+}
+<p>@Html.ActionLink("Back to Pokemon Type List", "Index")</p>
+<p>@Html.ActionLink("Home", "Index", "Home")</p>
