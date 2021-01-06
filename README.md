@@ -11,7 +11,7 @@
 
 </div>
 <h3 align="center">Pokemon many-to-many relationship database, 01-06-2020</h3>
-<h4 align="center"> By Agata Kolodziej, Garrett Dean Brown & Jeff Chiu</h4>
+<h4 align="center"> By Agata Kolodziej, Jeff Chiu & Garrett Dean Brown </h4>
 
 ## Description
 
