@@ -5,9 +5,15 @@ namespace PokemonDb.Models
 {
     public class Pokemon
     {
-        //fields { get; set; }
-        //public int ParentClassId {get; set; }
-        // public virtual ParentClass ParentClass { get; set; }
+        public Pokemon()
+        {
+            this.PokeTypes = new HashSet<Pokedex>();
+        }
+        public int PokemonId { get; set; }
+        public string PokemonDescription { get; set; }
+        public string PokemonName { get; set; }
+        public string PokemonGender { get; set; }
+        public ICollection<Pokedex> PokeTypes { get; }
 
     }
 }

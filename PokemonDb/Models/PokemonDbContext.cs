@@ -10,6 +10,5 @@ namespace PokemonDb.Models
         public DbSet<Pokedex> Pokedex { get; set; }
 
         public PokemonDbContext(DbContextOptions options) : base(options) { }
-
     }
 }

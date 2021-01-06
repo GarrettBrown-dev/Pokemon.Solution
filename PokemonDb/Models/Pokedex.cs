@@ -1,4 +1,4 @@
-// Join table
+// Join table 
 
 namespace PokemonDb.Models
 {

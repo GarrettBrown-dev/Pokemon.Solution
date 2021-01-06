@@ -1,14 +1,17 @@
 <div align="center">
 
-# Application Name
+# Pokemon Database
 
 </div>
 
 <div align="center">
 <img src="https://github.com/agatakolohe.png" width="200px" height="auto" >
+<img src="https://github.com/jeffchiudev.png" width="200px" height="auto" >
+<img src="https://github.com/GarrettBrown-dev.png" width="200px" height="auto" >
+
 </div>
-<h3 align="center">Description of application, date-2020</h3>
-<h4 align="center"> By Agata Kolodziej</h4>
+<h3 align="center">Pokemon many-to-many relationship database, 01-06-2020</h3>
+<h4 align="center"> By Agata Kolodziej, Garrett Dean Brown & Jeff Chiu</h4>
 
 ## Description
 
@@ -103,4 +106,4 @@ TODO
 
 This software is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).
 
-Copyright (c) 2020 Agata Kolodziej
+Copyright (c) 2020 Agata Kolodziej Garrett Dean Brown & Jeff Chiu
