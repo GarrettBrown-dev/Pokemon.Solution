@@ -59,14 +59,14 @@ namespace PokemonDb.Controllers
 
         public ActionResult Delete(int id)
         {
-            var thisPokeType = _db.PokeTypes.FirstOrDefault(poketype => pokeType.PokeTypeId == id);
+            var thisPokeType = _db.PokeTypes.FirstOrDefault(pokeType => pokeType.PokeTypeId == id);
             return View(thisPokeType);
         }
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            var thisPokeType = _db.PokeTypes.FirstOrDefault(poketype => poketype.PokeTypeId == id);
+            var thisPokeType = _db.PokeTypes.FirstOrDefault(pokeType => pokeType.PokeTypeId == id);
             _db.PokeTypes.Remove(thisPokeType);
             _db.SaveChanges();
             return RedirectToAction("Index");
