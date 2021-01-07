@@ -1,3 +1,24 @@
 @{
     Layout = "_Layout";
 }
+
+@using PokemonDb.Models;
+@model IEnumerable<PokemonDb.Models.Pokemon>
+
+@if (Model.Any())
+{
+    <ul>
+    @foreach (Pokemon pokemon in Model)
+        {
+            <li>@Html.ActionLink($"{pokemon.PokemonName}","Details", new { id = pokemon.PokemonId })</li>
+        }
+    </ul>
+}
+else
+{
+    <h3>No Pokemon have been added to the Pokedex!</h3>
+}
+
+<p>@Html.ActionLink("Add new Pokemon", "Create")</p>
+
+<p>@Html.ActionLink("Home", "Index", "Home")</p>

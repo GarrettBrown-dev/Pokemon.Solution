@@ -1,3 +1,31 @@
 @{
     Layout = "_Layout";
 }
+
+@model PokemonDb.Models.Pokemon;
+
+<h2>Pokemon Details</h2>
+<hr />
+<h3>Pokemon Name: @Html.DisplayFor(model => model.PokemonName)</h3>
+<h3>Pokemon Description: @Html.DisplayFor(model => model.PokemonDescription)</h3>
+<h3>Pokemon Gender: @Html.DisplayFor(model => model.PokemonGender)</h3>
+
+@if (Model.PokeTypes.Count == 0)
+{
+    <h4>@Html.DisplayFor(model => model.PokemonName) doesn't have an associated type</h4>
+}
+else
+{
+    <h4>Types associated to @Html.DisplayFor(model => model.PokemonName):</h4>
+    <ul>
+    @foreach (var join in Model.PokeTypes)
+        {
+            <li>@join.PokeType.PokeTypeName</li>
+        }
+    </ul>
+}
+
+<p>@Html.ActionLink("Show all pokemon", "Index")</p>
+<p>@Html.ActionLink("Edit Pokemon", "Edit", new { id = Model.PokemonId })</p>
+<p>@Html.ActionLink("Delete Pokemon", "Delete", new { id = Model.PokemonId })</p>
+<p>@Html.ActionLink("Home", "Index", "Home")</p>

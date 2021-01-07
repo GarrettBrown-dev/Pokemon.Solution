@@ -1,0 +1,35 @@
+@{
+    Layout = "_Layout";
+}
+
+@model PokemonDb.Models.Pokemon
+
+<h4>Add a new Pokemon to your Pokedex!</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.PokemonName)
+    @Html.TextBoxFor(model => model.PokemonName)
+
+    <br>
+
+    @Html.Label("Select Pokemon type")
+    @Html.DropDownList("PokeTypeId")
+
+    <br>
+
+    @Html.LabelFor(model => model.PokemonGender)
+    @Html.TextBoxFor(model => model.PokemonGender)
+
+    <br>
+
+    @Html.LabelFor(model => model.PokemonDescription)
+    @Html.TextBoxFor(model => model.PokemonDescription)
+
+    <br>
+
+    <input type="submit" value="Add new Pokemon" class="btn btn-default" />
+}
+
+<p>@Html.ActionLink("Show all pokemon", "Index")</p>
+<p>@Html.ActionLink("Home", "Index", "Home")</p>

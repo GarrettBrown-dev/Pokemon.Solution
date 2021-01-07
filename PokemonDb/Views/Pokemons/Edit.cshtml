@@ -1,3 +1,44 @@
 @{
     Layout = "_Layout";
 }
+
+@model PokemonDb.Models.Pokemon
+
+<h2>Edit Pokemon Info</h2>
+
+<h4>Edit @Html.DisplayFor(model => model.PokemonName)</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.PokemonId)
+
+    @Html.LabelFor(model => model.PokemonName)
+    @Html.EditorFor(model => model.PokemonName)
+
+    @Html.LabelFor(model => model.PokemonGender)
+    @Html.EditorFor(model => model.PokemonGender)
+
+    @Html.LabelFor(model => model.PokemonDescription)
+    @Html.EditorFor(model => model.PokemonDescription)
+
+    @Html.Label("Select Pokemon type")
+    @Html.DropDownList("PokeTypeId")
+
+    <input type="submit" value="Save" />
+}
+
+<ul>
+    @foreach(var join in Model.PokeTypes)
+    {
+        <li>Do you want to delete: @join.PokeType.PokeTypeName ?</li>
+        @using (Html.BeginForm("DeleteCategory", "Pokemons"))
+        {
+            @Html.Hidden("joinId", @join.PokedexId)
+            <input type="submit" value="Delete"/>
+        }
+    }
+</ul>
+
+<p>@Html.ActionLink("Back to Pokemon List", "Index")</p>
+<p>@Html.ActionLink("Delete Pokemon", "Delete", new { id = Model.PokemonId })</p>
+<p>@Html.ActionLink("Home", "Index", "Home")</p>

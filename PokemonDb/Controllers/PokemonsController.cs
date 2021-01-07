@@ -17,7 +17,7 @@ namespace PokemonDb.Controllers
 
         public ActionResult Index()
         {
-            return View(_db.Items.ToList());
+            return View(_db.Pokemons.ToList());
         }
         public ActionResult Create()
         {
@@ -39,7 +39,7 @@ namespace PokemonDb.Controllers
         public ActionResult Details(int id)
         {
             var thisPokemon = _db.Pokemons
-            .Include(pokemon => pokemon.PokemonTypes)
+            .Include(pokemon => pokemon.PokeTypes)
             .ThenInclude(join => join.PokeType)
             .FirstOrDefault(pokemon => pokemon.PokemonId == id);
             return View(thisPokemon);
@@ -47,7 +47,10 @@ namespace PokemonDb.Controllers
 
         public ActionResult Edit(int id)
         {
-            var thisPokemon = _db.Pokemons.FirstOrDefault(pokemons => pokemons.PokemonId == id);
+            var thisPokemon = _db.Pokemons
+            .Include(pokemon => pokemon.PokeTypes)
+            .ThenInclude(join => join.PokeType)
+            .FirstOrDefault(pokemon => pokemon.PokemonId == id);
             ViewBag.PokeTypeId = new SelectList(_db.PokeTypes, "PokeTypeId", "PokeTypeName");
             return View(thisPokemon);
         }

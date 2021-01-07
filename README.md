@@ -13,6 +13,10 @@
 <h3 align="center">Pokemon many-to-many relationship database, 01-06-2020</h3>
 <h4 align="center"> By Agata Kolodziej, Jeff Chiu & Garrett Dean Brown </h4>
 
+# To do tomorrow:
+
+- Change gender choice from text box to drop down method (change model)
+
 ## Description
 
 Purpose usage, detailed explanation what is does and any other information you want users and other developers to have
@@ -61,12 +65,6 @@ In order to run the application, please install .NET for your computer to recogn
 
 - Navigate to the TODO folder in the command line
 - Use the command `dotnet restore`
-
-##### Run Tests
-
-- Navigate to TODO folder in the command line
-- Use the commands `dotnet build` and `dotnet restore` to make sure code is compiled and packages are installed
-- Use the command `dotnet test` to run tests on all test methods
 
 ##### View In Browser
 
