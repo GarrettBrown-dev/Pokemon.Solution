@@ -54,12 +54,18 @@ namespace PokemonDb.Controllers
             ViewBag.PokeTypeId = new SelectList(_db.PokeTypes, "PokeTypeId", "PokeTypeName");
             return View(thisPokemon);
         }
+
         [HttpPost]
         public ActionResult Edit(Pokemon pokemon, int PokeTypeId)
         {
             if (PokeTypeId != 0)
             {
-                _db.Pokedex.Add(new Pokedex() { PokeTypeId = PokeTypeId, PokemonId = pokemon.PokemonId });
+                var returnedJoin = _db.Pokedex
+                .Any(join => join.PokemonId == pokemon.PokemonId && join.PokeTypeId == PokeTypeId);
+                if (!returnedJoin)
+                {
+                    _db.Pokedex.Add(new Pokedex() { PokeTypeId = PokeTypeId, PokemonId = pokemon.PokemonId });
+                }
             }
             _db.Entry(pokemon).State = EntityState.Modified;
             _db.SaveChanges();
@@ -101,3 +107,4 @@ namespace PokemonDb.Controllers
         }
     }
 }
+

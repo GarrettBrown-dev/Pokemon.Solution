@@ -15,8 +15,8 @@
 
 @foreach (PokeType pokeType in Model)
 {
-    <li>@Html.ActionLink($"{pokeType.PokeTypeName}", "Details", new { id = pokeType.PokeTypeId })</li>
+    <h3>@Html.ActionLink($"{pokeType.PokeTypeName}", "Details", new { id = pokeType.PokeTypeId })</h3>
 }
-
-<h4>@Html.ActionLink("Add new type", "Create")</h4>
+<hr />
+<h4>@Html.ActionLink("Add New Type", "Create")</h4>
 <h4>@Html.ActionLink("Home", "Index", "Home")</h4>

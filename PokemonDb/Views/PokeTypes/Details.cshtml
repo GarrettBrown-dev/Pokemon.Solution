@@ -6,7 +6,8 @@
 
 <h1>Pokemon Type Details:</h1>
 <hr />
-<h3>Pokemon Type: @Html.DisplayFor(model => model.PokeTypeName)</h3>
+<h2>Pokemon Type: @Html.DisplayFor(model => model.PokeTypeName)</h2>
+<hr />
 
 @if (Model.Pokemons.Count == 0)
 {
@@ -14,16 +15,16 @@
 }
 else
 {
-    <h4>Pokemon Type: </h4>
-    <ul>
+    <h3>Pokemon: </h3>
+    
     @foreach (var join in Model.Pokemons)
         {
-            <li>@join.Pokemon.PokemonName</li>
+            <h4>@join.Pokemon.PokemonName</h4>
         }
-    </ul>
+   
 }
-
-<h4>@Html.ActionLink("Back to Pokemon Type list", "Index")</h4>
+<hr />
+<h4>@Html.ActionLink("Back to Pokemon Type List", "Index")</h4>
 <h4>@Html.ActionLink("Edit Pokemon Type", "Edit", new { id = Model.PokeTypeId})</h4>
 <h4>@Html.ActionLink("Delete Pokemon Type", "Delete", new { id = Model.PokeTypeId})</h4>
 <h4>@Html.ActionLink("Home", "Index", "Home")</h4>

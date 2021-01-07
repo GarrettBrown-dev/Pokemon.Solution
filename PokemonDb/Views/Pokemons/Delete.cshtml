@@ -5,11 +5,12 @@
 @model PokemonDb.Models.Pokemon;
 
 <h1>Are you sure you want to remove this Pokemon from your Pokedex?</h1>
-
-<p>Pokemon Name: @Html.DisplayFor(model => model.PokemonName)</p>
+<hr />
+<h3>Pokemon Name: @Html.DisplayFor(model => model.PokemonName)</h3>
 @using (Html.BeginForm())
 {
     <input type="submit" value="Delete" class="btn btn-danger" />
 }
-<h4>@Html.ActionLink("Back to your Pokemon List", "Index")</h4>
+<hr />
+<h4>@Html.ActionLink("Back to Your Pokemon List", "Index")</h4>
 <h4>@Html.ActionLink("Home", "Index", "Home")</h4>

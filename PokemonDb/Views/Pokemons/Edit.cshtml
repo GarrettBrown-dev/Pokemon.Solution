@@ -5,47 +5,41 @@
 @model PokemonDb.Models.Pokemon
 
 <h1>Edit Pokemon Info</h1>
+<hr/>
+<h3>Edit: @Html.DisplayFor(model => model.PokemonName)</h4>
+<h3><strong>WARNING: IF YOU EDIT YOUR POKEMAN IT WILL LOSE ITS CURRENT LEVEL</strong></h3>
+<hr/>
+<div class="pokeDetails">
 
-<h3>Edit @Html.DisplayFor(model => model.PokemonName)</h4>
 
 @using (Html.BeginForm())
 {
     @Html.HiddenFor(model => model.PokemonId)
 
-    @Html.LabelFor(model => model.PokemonName)
-    @Html.EditorFor(model => model.PokemonName)
+    <h3>Pokemon Name:   @Html.EditorFor(model => model.PokemonName)</h3>
 
-    <br>
+    <h3>Pokemon Gender: @Html.EditorFor(model => model.PokemonGender)</h3>
+   
+   <h3>Pokemon Description: @Html.EditorFor(model => model.PokemonDescription)</h3>
 
-    @Html.LabelFor(model => model.PokemonGender)
-    @Html.EditorFor(model => model.PokemonGender)
+    <h3>Add Another Pokemon Type to This Pokemon: @Html.DropDownList("PokeTypeId")</h3>
 
-    <br>
-
-    @Html.LabelFor(model => model.PokemonDescription)
-    @Html.EditorFor(model => model.PokemonDescription)
-
-    <br>
-
-    @Html.Label("Add Pokemon type to this Pokemon")
-    @Html.DropDownList("PokeTypeId")
-
-    <br>
-
-    <input type="submit" value="Save" />
+    <input type="submit" value="Save" class="btn btn-primary" />
 }
 <hr />
 <ul>
     @foreach(var join in Model.PokeTypes)
     {
-        <li>Do you want to delete the PokeType: @join.PokeType.PokeTypeName ?</li>
+        
         @using (Html.BeginForm("DeletePokeType", "Pokemons"))
         {
             @Html.Hidden("joinId", @join.PokedexId)
-            <input type="submit" value="Delete"/>
+            <h4>Do you want to delete the PokeType: @join.PokeType.PokeTypeName ? <input type="submit" value="Delete" class="btn btn-danger"/></h4>
+            
         }
     }
 </ul>
+</div>
 <hr />
 <h4>@Html.ActionLink("Back to Pokemon List", "Index")</h4>
 <h4>@Html.ActionLink("Delete Pokemon", "Delete", new { id = Model.PokemonId })</h4>

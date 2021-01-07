@@ -5,11 +5,12 @@
 @model PokemonDb.Models.PokeType;
 
 <h1>Are you sure you want to remove this type?</h1>
-
-<p>Pokemon Type: @Html.DisplayFor(model => model.PokeTypeName)</p>
+<hr />
+<h2>Pokemon Type: @Html.DisplayFor(model => model.PokeTypeName)</h2>
 @using (Html.BeginForm())
 {
-    <input type="submit" value="Delete" />
+    <input type="submit" value="Delete" class="btn btn-danger" />
 }
+<hr />
 <h4>@Html.ActionLink("Back to Pokemon Type List", "Index")</h4>
 <h4>@Html.ActionLink("Home", "Index", "Home")</h4>

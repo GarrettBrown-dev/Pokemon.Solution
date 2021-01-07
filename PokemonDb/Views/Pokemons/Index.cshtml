@@ -6,22 +6,24 @@
 @model IEnumerable<PokemonDb.Models.Pokemon>
 
 <h1>Your Pokemon!</h1>
+<h3>Click on a Pokemon to see their details</h3>
 <hr />
 
 @if (Model.Any())
 {
-    <ul>
+    
     @foreach (Pokemon pokemon in Model)
         {
-            <li>@Html.ActionLink($"{pokemon.PokemonName}","Details", new { id = pokemon.PokemonId })</li>
+            <h4>@Html.ActionLink($"{pokemon.PokemonName}","Details", new { id = pokemon.PokemonId })</h4>
         }
-    </ul>
+
 }
 else
 {
     <h3>No Pokemon have been added to the Pokedex!</h3>
 }
+<hr/>
 
-<h4>@Html.ActionLink("Add new Pokemon", "Create")</h4>
+<h4>@Html.ActionLink("Add New Pokemon", "Create")</h4>
 
 <h4>@Html.ActionLink("Home", "Index", "Home")</h4>

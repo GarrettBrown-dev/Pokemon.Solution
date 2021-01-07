@@ -5,18 +5,18 @@
 @model PokemonDb.Models.PokeType;
 
 <h1>Edit Pokemon Type:</h1>
+<hr />
 
-<h4>Edit @Html.DisplayFor(model => model.PokeTypeName)</h4>
+<h2>Edit: @Html.DisplayFor(model => model.PokeTypeName)</h2>
+<hr />
 
 @using (Html.BeginForm())
 {
     @Html.HiddenFor(model => model.PokeTypeId)
 
-    @Html.LabelFor(model => model.PokeTypeName)
-    @Html.EditorFor(model => model.PokeTypeName)
-
-    <input type="submit" value="Save" />
+    <h3>Pokemon Type Name: @Html.EditorFor(model => model.PokeTypeName) <input type="submit" value="Save"
+        class="btn btn-primary" /></h3>
 }
-
+<hr />
 <h4>@Html.ActionLink("Back to Pokemon Types", "Index")</h4>
 <h4>@Html.ActionLink("Home", "Index", "Home")</h4>
