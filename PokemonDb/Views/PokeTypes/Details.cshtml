@@ -14,7 +14,7 @@
 }
 else
 {
-    <h4>Pokemon of this Type:</h4>
+    <h4>Pokemon Type: </h4>
     <ul>
     @foreach (var join in Model.Pokemons)
         {
@@ -23,7 +23,7 @@ else
     </ul>
 }
 
-<p>@Html.ActionLink("Back to Pokemon Type list", "Index")</p>
-<p>@Html.ActionLink("Edit Pokemon Type", "Edit", new { id = Model.PokeTypeId})</p>
-<p>@Html.ActionLink("Delete Pokemon Type", "Delete", new { id = Model.PokeTypeId})</p>
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
+<h4>@Html.ActionLink("Back to Pokemon Type list", "Index")</h4>
+<h4>@Html.ActionLink("Edit Pokemon Type", "Edit", new { id = Model.PokeTypeId})</h4>
+<h4>@Html.ActionLink("Delete Pokemon Type", "Delete", new { id = Model.PokeTypeId})</h4>
+<h4>@Html.ActionLink("Home", "Index", "Home")</h4>

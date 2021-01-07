@@ -9,6 +9,7 @@
 <h3>Pokemon Name: @Html.DisplayFor(model => model.PokemonName)</h3>
 <h3>Pokemon Description: @Html.DisplayFor(model => model.PokemonDescription)</h3>
 <h3>Pokemon Gender: @Html.DisplayFor(model => model.PokemonGender)</h3>
+@* <h3>Pokemon Type: @Html.DisplayFor(Model.PokeTypes.PokeType.PokeTypeName)</h3> *@
 
 @if (Model.PokeTypes.Count == 0)
 {
@@ -16,16 +17,15 @@
 }
 else
 {
-    <h4>Types associated to @Html.DisplayFor(model => model.PokemonName):</h4>
     <ul>
     @foreach (var join in Model.PokeTypes)
         {
-            <li>@join.PokeType.PokeTypeName</li>
+            <h3>Pokemon Type: @join.PokeType.PokeTypeName</h3>
         }
     </ul>
 }
 
-<p>@Html.ActionLink("Show all pokemon", "Index")</p>
-<p>@Html.ActionLink("Edit Pokemon", "Edit", new { id = Model.PokemonId })</p>
-<p>@Html.ActionLink("Delete Pokemon", "Delete", new { id = Model.PokemonId })</p>
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
+<h4>@Html.ActionLink("Show all pokemon", "Index")</h4>
+<h4>@Html.ActionLink("Edit Pokemon", "Edit", new { id = Model.PokemonId })</h4>
+<h4>@Html.ActionLink("Delete Pokemon", "Delete", new { id = Model.PokemonId })</h4>
+<h4>@Html.ActionLink("Home", "Index", "Home")</h4>

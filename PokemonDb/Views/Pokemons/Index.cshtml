@@ -6,6 +6,7 @@
 @model IEnumerable<PokemonDb.Models.Pokemon>
 
 <h1>Your Pokemon!</h1>
+<hr />
 
 @if (Model.Any())
 {
@@ -21,6 +22,6 @@ else
     <h3>No Pokemon have been added to the Pokedex!</h3>
 }
 
-<p>@Html.ActionLink("Add new Pokemon", "Create")</p>
+<h4>@Html.ActionLink("Add new Pokemon", "Create")</h4>
 
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
+<h4>@Html.ActionLink("Home", "Index", "Home")</h4>

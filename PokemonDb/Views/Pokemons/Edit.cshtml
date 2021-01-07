@@ -15,22 +15,30 @@
     @Html.LabelFor(model => model.PokemonName)
     @Html.EditorFor(model => model.PokemonName)
 
+    <br>
+
     @Html.LabelFor(model => model.PokemonGender)
     @Html.EditorFor(model => model.PokemonGender)
+
+    <br>
 
     @Html.LabelFor(model => model.PokemonDescription)
     @Html.EditorFor(model => model.PokemonDescription)
 
+    <br>
+
     @Html.Label("Select Pokemon type")
     @Html.DropDownList("PokeTypeId")
 
+    <br>
+
     <input type="submit" value="Save" />
 }
-
+<hr />
 <ul>
     @foreach(var join in Model.PokeTypes)
     {
-        <li>Do you want to delete: @join.PokeType.PokeTypeName ?</li>
+        <li>Do you want to delete the PokeType: @join.PokeType.PokeTypeName ?</li>
         @using (Html.BeginForm("DeleteCategory", "Pokemons"))
         {
             @Html.Hidden("joinId", @join.PokedexId)
@@ -38,7 +46,7 @@
         }
     }
 </ul>
-
-<p>@Html.ActionLink("Back to Pokemon List", "Index")</p>
-<p>@Html.ActionLink("Delete Pokemon", "Delete", new { id = Model.PokemonId })</p>
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
+<hr />
+<h4>@Html.ActionLink("Back to Pokemon List", "Index")</h4>
+<h4>@Html.ActionLink("Delete Pokemon", "Delete", new { id = Model.PokemonId })</h4>
+<h4>@Html.ActionLink("Home", "Index", "Home")</h4>
