@@ -27,7 +27,7 @@
 
     <br>
 
-    @Html.Label("Select Pokemon type")
+    @Html.Label("Add Pokemon type to this Pokemon")
     @Html.DropDownList("PokeTypeId")
 
     <br>
@@ -39,7 +39,7 @@
     @foreach(var join in Model.PokeTypes)
     {
         <li>Do you want to delete the PokeType: @join.PokeType.PokeTypeName ?</li>
-        @using (Html.BeginForm("DeleteCategory", "Pokemons"))
+        @using (Html.BeginForm("DeletePokeType", "Pokemons"))
         {
             @Html.Hidden("joinId", @join.PokedexId)
             <input type="submit" value="Delete"/>

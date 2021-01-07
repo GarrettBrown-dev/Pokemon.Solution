@@ -13,7 +13,13 @@ namespace PokemonDb.Models
         public string PokemonDescription { get; set; }
         public string PokemonName { get; set; }
         public string PokemonGender { get; set; }
+        public int PokemonLevel { get; set; }
         public ICollection<Pokedex> PokeTypes { get; }
+
+        public void LevelUp()
+        {
+            this.PokemonLevel += 1;
+        }
 
     }
 }

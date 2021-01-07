@@ -88,5 +88,16 @@ namespace PokemonDb.Controllers
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        [HttpPost]
+        public ActionResult LevelUp(int pokemonId)
+        {
+            var thisPokemon = _db.Pokemons.FirstOrDefault(pokemons => pokemons.PokemonId == pokemonId);
+            thisPokemon.LevelUp();
+            _db.Pokemons.Attach(thisPokemon);
+            _db.Entry(thisPokemon).Property(pokemon => pokemon.PokemonLevel).IsModified = true;
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
