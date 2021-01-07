@@ -4,7 +4,7 @@
 
 @model PokemonDb.Models.PokeType;
 
-<h3>Add a new Pokemon Type</h3>
+<h1>Add a new Pokemon Type</h1>
 @using (Html.BeginForm())
 {
     @Html.LabelFor(model => model.PokeTypeName)
@@ -12,4 +12,4 @@
     <input type="submit" value="Add a new pokemon type" />
 }
 <h4>@Html.ActionLink("Show all pokemon types", "Index")</h4>
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
+<h4>@Html.ActionLink("Home", "Index", "Home")</h4>
