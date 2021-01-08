@@ -1,0 +1,22 @@
+@{
+    Layout = "_Layout";
+}
+
+@model PokemonDb.Models.Trainer;
+
+<h1>Edit Pokemon Trainer:</h1>
+<hr />
+
+<h2>Edit: @Html.DisplayFor(model => model.TrainerName)</h2>
+<hr />
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.TrainerId)
+
+    <h3>Pokemon Trainer Name: @Html.EditorFor(model => model.TrainerName) <input type="submit" value="Save"
+        class="btn btn-primary" /></h3>
+}
+<hr />
+<h4>@Html.ActionLink("Back to Trainers", "Index")</h4>
+<h4>@Html.ActionLink("Home", "Index", "Home")</h4>

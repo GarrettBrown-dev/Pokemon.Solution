@@ -1,0 +1,31 @@
+@{
+    Layout = "_Layout";
+}
+
+@using PokemonDb.Models;
+@model PokemonDb.Models.Trainer;
+
+<h1>Pokemon Trainer Details:</h1>
+<hr />
+<h2>Pokemon Trainer Name: @Html.DisplayFor(model => model.TrainerName)</h2>
+<hr />
+
+@if (Model.Pokemons.Count == 0)
+{
+    <p>This Pokemon trainer does not have any Pokemon.</p>
+}
+else
+{
+    <h3>Pokemon: </h3>
+    
+    @foreach (Pokemon pokemon in @Model.Pokemons)
+        {
+            <h4>@pokemon.PokemonName</h4>
+        }
+   
+}
+<hr />
+<h4>@Html.ActionLink("Back to Pokemon Trainers List", "Index")</h4>
+<h4>@Html.ActionLink("Edit Pokemon Trainer", "Edit", new { id = Model.TrainerId})</h4>
+<h4>@Html.ActionLink("Delete Pokemon Trainer", "Delete", new { id = Model.TrainerId})</h4>
+<h4>@Html.ActionLink("Home", "Index", "Home")</h4>

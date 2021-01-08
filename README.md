@@ -16,10 +16,30 @@
 # To do tomorrow:
 
 - Change gender choice from text box to drop down method (change model)
+- Add an option for a trainer to add pokemon, change the controller to have a viewbag of pokemon
 
 ## Description
 
-Purpose usage, detailed explanation what is does and any other information you want users and other developers to have
+### Do You Want To Be The Very Best?
+
+Allows the user to create and log any kind of pokemon they desire. (Canon to the series or otherwise.) Also has a levelling function and a type assignment! You shall be the POKEMASTER WITH THIS AT YOUR FINGERTIPS!
+
+### Testing
+
+To catch them is your real test
+
+### Cause
+
+To train them is your cause
+
+## Goals
+
+Travel across the land, search far and wide
+
+## Education
+
+Each Pokemon to understand.
+The power thats inside!
 
 ## Specifications
 
@@ -29,7 +49,7 @@ Purpose usage, detailed explanation what is does and any other information you w
 ### Describe: Name()
 
 | Test | Expect |
-| ---- | ------ |
+| Are you the very best? | Does user use PokemonDb? | Yes |
 
 </details>
 

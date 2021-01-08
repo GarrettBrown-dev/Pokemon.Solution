@@ -1,0 +1,20 @@
+@{
+    Layout = "_Layout";
+}
+
+@model PokemonDb.Models.Trainer
+
+<h1>Add a new Trainer!</h1>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.TrainerName)
+    @Html.TextBoxFor(model => model.TrainerName)
+
+    <hr />
+
+    <input type="submit" value="Add new Trainer" class="btn btn-primary" />
+}
+
+<h4>@Html.ActionLink("Show all Trainers", "Index")</h4>
+<h4>@Html.ActionLink("Home", "Index", "Home")</h4>

@@ -1,0 +1,16 @@
+@{
+    Layout = "_Layout";
+}
+
+@model PokemonDb.Models.Trainer;
+
+<h1>Are you sure you want to remove this Trainer?</h1>
+<hr />
+<h3>Trainer Name: @Html.DisplayFor(model => model.TrainerName)</h3>
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Delete" class="btn btn-danger" />
+}
+<hr />
+<h4>@Html.ActionLink("Back to Trainers", "Index")</h4>
+<h4>@Html.ActionLink("Home", "Index", "Home")</h4>

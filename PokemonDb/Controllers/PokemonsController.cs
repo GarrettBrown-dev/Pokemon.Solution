@@ -26,7 +26,7 @@ namespace PokemonDb.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(Pokemon pokemon, int PokeTypeId)
+        public ActionResult Create(Pokemon pokemon, int PokeTypeId, int TrainerId)
         {
             _db.Pokemons.Add(pokemon);
             if (PokeTypeId != 0)
