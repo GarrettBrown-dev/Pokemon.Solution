@@ -2,6 +2,8 @@
 
 # Pokemon Database
 
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8Q_3EVY7j95tTyemJwWxMR7jwvUK7gPe0_w&usqp=CAU" width="200px" height="auto">
+
 </div>
 
 <div align="center">
